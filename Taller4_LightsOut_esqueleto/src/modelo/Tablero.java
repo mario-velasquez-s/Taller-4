@@ -1,4 +1,4 @@
-package uniandes.dpoo.taller4.modelo;
+package modelo;
 
 /**
  * Esta clase sirve para representar un tablero del juego LightsOut.
@@ -8,7 +8,7 @@ package uniandes.dpoo.taller4.modelo;
  * cambia de estado (de prendida a apagada y viceversa). Lo mismo sucede con las
  * 8 luces vecinas a la luz seleccionada por el jugador.
  *
- * El objetivo del juego es lograr que todas las luces estén prendidas, en la
+ * El objetivo del juego es lograr que todas las luces estï¿½n prendidas, en la
  * menor cantidad de jugadas posibles.
  */
 public class Tablero
@@ -17,7 +17,7 @@ public class Tablero
 	// Atributos
 	// ********************************
 	/**
-	 * Una matriz con las casillas del tablero: true significa que está apagado
+	 * Una matriz con las casillas del tablero: true significa que estï¿½ apagado
 	 */
 	private boolean[][] tablero;
 
@@ -28,8 +28,8 @@ public class Tablero
 	private boolean[][] tablero_original;
 
 	/**
-	 * La cantidad de jugadas realizadas hasta el momento desde la última vez que se
-	 * reinició el tablero.
+	 * La cantidad de jugadas realizadas hasta el momento desde la ï¿½ltima vez que se
+	 * reiniciï¿½ el tablero.
 	 */
 	private int jugadas;
 
@@ -38,7 +38,7 @@ public class Tablero
 	// ********************************
 
 	/**
-	 * Crea un nuevo tablero del tamaño indicado. El tablero se crea con tamano x
+	 * Crea un nuevo tablero del tamaï¿½o indicado. El tablero se crea con tamano x
 	 * tamano casillas prendidas.
 	 * 
 	 * La cantidad de jugadas se inicializa en 0.
@@ -59,7 +59,7 @@ public class Tablero
 	}
 
 	// ********************************
-	// Métodos
+	// Mï¿½todos
 	// ********************************
 
 	/**
@@ -88,10 +88,10 @@ public class Tablero
 
 	/**
 	 * Desordena el tablero realizando una serie de jugadas sobre posiciones
-	 * aleatorias. Si antes de ejecutar este método el tablero estaba todo
-	 * iluminado, esto garantiza que se vaya a poder resolver después.
+	 * aleatorias. Si antes de ejecutar este mï¿½todo el tablero estaba todo
+	 * iluminado, esto garantiza que se vaya a poder resolver despuï¿½s.
 	 * 
-	 * El número de jugadas realizadas se mantiene constante
+	 * El nï¿½mero de jugadas realizadas se mantiene constante
 	 * 
 	 * @param dificultad La cantidad de jugadas aleatorias que se deben hacer.
 	 */
@@ -132,7 +132,7 @@ public class Tablero
 
 	/**
 	 * Cambia el estado de una casilla y el estado de las casillas que la rodean:
-	 * las iluminadas se apagan y viceversa. Incrementa en 1 el número de jugadas
+	 * las iluminadas se apagan y viceversa. Incrementa en 1 el nï¿½mero de jugadas
 	 * realizadas hasta el momento.
 	 * 
 	 * @param fila    La fila de la casilla, contando desde 0
@@ -158,7 +158,7 @@ public class Tablero
 	}
 
 	/**
-	 * Informa si todas las casillas del tablero están iluminadas
+	 * Informa si todas las casillas del tablero estï¿½n iluminadas
 	 * 
 	 * @return
 	 */
@@ -176,7 +176,7 @@ public class Tablero
 	/**
 	 * Calcula la cantidad de puntos que obtuvo el jugador
 	 * 
-	 * @return Una cantidad de puntos que depende del tamaño del tablero y de la
+	 * @return Una cantidad de puntos que depende del tamaï¿½o del tablero y de la
 	 *         cantidad de jugadas que fueron necesarias
 	 */
 	public int calcularPuntaje()

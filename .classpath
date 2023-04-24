@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Taller4_LightsOut_esqueleto/src"/>
+	<classpathentry kind="lib" path="Taller4_LightsOut_esqueleto/lib/flatlaf-1.0.jar"/>
+	<classpathentry kind="output" path="Taller4_LightsOut_esqueleto/bin"/>
+</classpath>

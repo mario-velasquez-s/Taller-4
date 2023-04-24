@@ -1,4 +1,4 @@
-package uniandes.dpoo.taller4.modelo;
+package modelo;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,11 +22,11 @@ import java.util.PriorityQueue;
  * Esta clase utiliza una cola de prioridades para mantener los records
  * ordenados, y usa un Comparator para decidir el orden relativo entre records.
  * 
- * No es una implementación particularmente eficiente (sería más eficiente haber
+ * No es una implementaciï¿½n particularmente eficiente (serï¿½a mï¿½s eficiente haber
  * usado una lista) pero permite ilustrar el uso de otras clases del framework
  * de colecciones y demostrar el uso de comparadores.
  * 
- * Esta clase también incluye mecanismos de persistencia sobre archivos CSV
+ * Esta clase tambiï¿½n incluye mecanismos de persistencia sobre archivos CSV
  */
 public class Top10
 {
@@ -42,7 +42,7 @@ public class Top10
 	/**
 	 * El peor puntaje almacenado hasta el momento. Este valor se almacena para no
 	 * tener que recorrer la cola completa para poder saber si un nuevo record debe
-	 * entrar o no al top-10 (conocer el último elementos de una Cola de Prioridades
+	 * entrar o no al top-10 (conocer el ï¿½ltimo elementos de una Cola de Prioridades
 	 * es O(n) )
 	 */
 	private int peorPuntaje;
@@ -58,10 +58,10 @@ public class Top10
 	public Top10()
 	{
 		// Construye una nueva cola de prioridades y la inicializa con un
-		// comparador para Registros. Este comparador se usará cada vez
-		// que se agregue un elemento a la cola y se basará en los puntos.
-		// El comparador se implementa como una clase interna anónima porque
-		// no se usará en ninguna otra parte del programa y no tiene sentido
+		// comparador para Registros. Este comparador se usarï¿½ cada vez
+		// que se agregue un elemento a la cola y se basarï¿½ en los puntos.
+		// El comparador se implementa como una clase interna anï¿½nima porque
+		// no se usarï¿½ en ninguna otra parte del programa y no tiene sentido
 		// reutilizarla.
 		registros = new PriorityQueue<>(new Comparator<RegistroTop10>()
 		{
@@ -83,14 +83,14 @@ public class Top10
 	}
 
 	// ********************************
-	// Métodos
+	// Mï¿½todos
 	// ********************************
 
 	/**
 	 * Indica si el puntaje indicado es suficiente para entrar al top10
 	 * 
 	 * @param puntaje El puntaje que se va a revisar
-	 * @return True si el puntaje debería estar en el top10
+	 * @return True si el puntaje deberï¿½a estar en el top10
 	 */
 	public boolean esTop10(int puntaje)
 	{
@@ -98,7 +98,7 @@ public class Top10
 	}
 
 	/**
-	 * Agrega un nuevo registro al top10, en la posición correcta de acuerdo a la
+	 * Agrega un nuevo registro al top10, en la posiciï¿½n correcta de acuerdo a la
 	 * cantidad de puntos.
 	 * 
 	 * @param nombre  El nombre que debe quedar asociado al nuevo puntaje
@@ -109,10 +109,10 @@ public class Top10
 		RegistroTop10 nuevoRegistro = new RegistroTop10(nombre, puntaje);
 		registros.add(nuevoRegistro);
 
-		// Si hay más de 10 registros en el top 10 después de agregar el nuevo, debe
+		// Si hay mï¿½s de 10 registros en el top 10 despuï¿½s de agregar el nuevo, debe
 		// eliminarse el peor.
-		// En una cola de prioridades no se pueden eliminar elementos de una posición
-		// particular, así que es necesario sacar los 10 mejores registros a una lista
+		// En una cola de prioridades no se pueden eliminar elementos de una posiciï¿½n
+		// particular, asï¿½ que es necesario sacar los 10 mejores registros a una lista
 		// temporal y luego reconstruir la cola con estos elementos
 		if (registros.size() > 10)
 		{
@@ -132,7 +132,7 @@ public class Top10
 	 * Retorna los registros de una manera en la que se puedan recorrer pero no
 	 * modificar
 	 * 
-	 * @return Los registros del top 10, vistos como una colección.
+	 * @return Los registros del top 10, vistos como una colecciï¿½n.
 	 */
 	public Collection<RegistroTop10> darRegistros()
 	{
@@ -143,16 +143,16 @@ public class Top10
 	 * Salva los registros del top 10 en un archivo de texto UTF-8 y usando el
 	 * siguiente formato:
 	 * 
-	 * - En cada línea aparece un registro
+	 * - En cada lï¿½nea aparece un registro
 	 * 
 	 * - Cada registro tiene el nombre y los puntos separados por el caracter ';'
 	 * 
-	 * @param archivo El archivo donde se debe almacenar la información
-	 * @throws FileNotFoundException        Esta excepción se lanza si hay problemas
+	 * @param archivo El archivo donde se debe almacenar la informaciï¿½n
+	 * @throws FileNotFoundException        Esta excepciï¿½n se lanza si hay problemas
 	 *                                      creando el archivo
-	 * @throws UnsupportedEncodingException Esta excepción se lanza si por algún
+	 * @throws UnsupportedEncodingException Esta excepciï¿½n se lanza si por algï¿½n
 	 *                                      motivo no puede usarse el encoding utf-8
-	 *                                      para guardar la información dentro del
+	 *                                      para guardar la informaciï¿½n dentro del
 	 *                                      archivo.
 	 */
 	public void salvarRecords(File archivo) throws FileNotFoundException, UnsupportedEncodingException
@@ -170,14 +170,14 @@ public class Top10
 	}
 
 	/**
-	 * Carga la información de los records a partir de un archivo de texto que debe
+	 * Carga la informaciï¿½n de los records a partir de un archivo de texto que debe
 	 * estar en el siguiente formato:
 	 * 
-	 * - En cada línea aparece un registro
+	 * - En cada lï¿½nea aparece un registro
 	 * 
 	 * - Cada registro tiene el nombre y los puntos separados por el caracter ';'
 	 * 
-	 * @param archivo El archivo donde se encuentra almacenada la información de los
+	 * @param archivo El archivo donde se encuentra almacenada la informaciï¿½n de los
 	 *                records. Si el archivo no existe no se hace nada pero no se
 	 *                produce un error.
 	 */
@@ -202,7 +202,7 @@ public class Top10
 			}
 			catch (FileNotFoundException e)
 			{
-				System.out.println("No encontré el archivo ...");
+				System.out.println("No encontrï¿½ el archivo ...");
 				e.printStackTrace();
 			}
 			catch (IOException e)
@@ -212,7 +212,7 @@ public class Top10
 			}
 			catch (NumberFormatException e)
 			{
-				System.out.println("Error en los datos: un número se pudo convertir a int ...");
+				System.out.println("Error en los datos: un nï¿½mero se pudo convertir a int ...");
 				e.printStackTrace();
 			}
 
